@@ -13,7 +13,7 @@ export const PedidosScreen = () => {
 		console.log(registrarPedidoInput);
 		if (registrarPedidoInput.trim().length === 8 || registrarPedidoInput.trim().length === 10) {
 			//llama a peticion
-			postPedido(url,{id_estudiante: registrarPedidoInput})
+			postPedido(url,{id_estudiante: registrarPedidoInput, idClient : 1})
 
 			console.log('Pedido enviado ' + registrarPedidoInput);
 			reset()
@@ -25,7 +25,7 @@ export const PedidosScreen = () => {
 		return false
 	};
 
-	const url = 'http://127.0.0.1:8080/api/pedidos'
+	const url = 'http://127.0.0.1:8081/api/pedidos'
 
 	
 	const postPedido = async (url, data = {}) => {
@@ -52,7 +52,7 @@ export const PedidosScreen = () => {
 	// console.log(response);
 	return (
 		<>
-			<h2>PedidosScreen</h2>
+			<h1>PedidosScreen</h1>
 			<div>
 				<form onSubmit={handleSearch}>
 					<input
